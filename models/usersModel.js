@@ -1,5 +1,5 @@
 const mongoose = require('../db/connection');
-const Tasks = require('../models/tasksModel')
+const Tasks = require('../models/tasksModel').schema
 const bcrypt = require('bcrypt')
 
 const Users = new mongoose.Schema({

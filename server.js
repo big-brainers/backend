@@ -16,7 +16,7 @@ const TaskControllers = require('./controllers/taskControllers')
 app.use('/task',TaskControllers)
 
 dotenv.config();
-app.set('port', /* process.env.PORT ||  */8000);
+app.set('port', process.env.PORT || 8000);
 
 app.listen(app.get('port'), () => {
 	console.log(`PORT: ${app.get('port')}`);
