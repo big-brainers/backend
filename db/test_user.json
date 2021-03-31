@@ -1,6 +1,22 @@
 [
     {
         "email": "bigbrainersfour@gmail.com",
-        "password": "Okcoolcheckit0ut!"
+        "password": "123456!",
+        "userRole": "Dev"
+    },
+    {
+        "email": "test1@gmail.com",
+        "password": "1234567!",
+        "userRole": "Dev1"
+    },
+    {
+        "email": "test2@gmail.com",
+        "password": "1234568!",
+        "userRole": "Dev2"
+    },
+    {
+        "email": "test3@gmail.com",
+        "password": "1234569!",
+        "userRole": "Dev3"
     }
 ]

@@ -1,13 +1,16 @@
-const mongoose = require('../db/connection')
+const mongoose = require('mongoose');
 
-const Tasks = new mongoose.Schema({
+const Tasks = mongoose.Schema({
 	title: String,
 	details: String,
-    // status: String,
-	// date: Number,
-	// tags: [String]
+	status: Boolean,
+	date: {
+		type: Date,
+		default: Date.now()
+	},
+	tags: [String]
 })
 
-const TaskModel = mongoose.model('Tasks', Tasks);
+const TaskModel = mongoose.model('tasks', Tasks, 'tasks');
 
 module.exports = TaskModel
