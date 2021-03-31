@@ -9,11 +9,11 @@ app.use(express.urlencoded({ extended: true }))
 
 //User Controller
 const UserController = require('./controllers/userController')
-app.use('/user',UserController)
+app.use('/users',UserController)
 
 //Task Controller
 const TaskControllers = require('./controllers/taskControllers')
-app.use('/task',TaskControllers)
+app.use('/',TaskControllers)
 
 dotenv.config();
 app.set('port', process.env.PORT || 8000);

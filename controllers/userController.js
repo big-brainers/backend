@@ -5,24 +5,27 @@ const router = express.Router()
 // GET all users
 router.get('/', (req, res, next) => {
 	User.find({})
-		.then((users) => {
-			res.json(users)
-		})
+		.then((users) => res.json(users))
 		.catch(next)
 })
 
 //GET by id
 router.get('/:id', (req, res, next) => {
 	User.findById({ _id: req.params.id })
-		.then((user) => {
-			res.json(user)
-		})
+		.then((user) => res.json(user))
 		.catch(next)
 })
 
 //POST creates user
-router.post('/', (req, res, next) => {
+router.post('/create', (req, res, next) => {
 	User.create(req.body)
+		.then((user) => res.json(user))
+		.catch(next)
+})
+
+//DELETE user
+router.delete('/:id', (req, res, next) => {
+	User.findByIdAndDelete(req.params.id)
 		.then((user) => res.json(user))
 		.catch(next)
 })

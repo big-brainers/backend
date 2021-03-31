@@ -4,8 +4,8 @@ const bcrypt = require('bcrypt')
 
 const Users = new mongoose.Schema({
     email: {type:String, required:true, unique:true},
-    password: {type:String}, 
-    Tasks: [Tasks]
+    password: {type:String, required:true,}, 
+    tasks: [Tasks]
 })
 
 Users.methods.matchPassword = async function (enteredPassword) {
@@ -16,8 +16,8 @@ Users.pre("save", async function (next) {
     if (!this.isModified("password")) {
         next()
     }
-    const pass = await bcrypt.genPass(10)
-    this.password = await bcrypt.hash(this.password, pass)
+    const salt = await bcrypt.genSalt(10)
+    this.password = await bcrypt.hash(this.password, salt)
 })
 
 const UsersModel = mongoose.model('Users', Users)
