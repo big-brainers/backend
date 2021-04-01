@@ -40,8 +40,8 @@ router.post('/Users/:userId/tasks/create', (req, res, next) => {
 })
 
 //PUT updates a Task
-router.put('/tasks/:id', (req, res, next) => {
-	Task.findOneAndUpdate(
+router.put('/Users/:userId/tasks/:id', (req, res, next) => {
+	Task.findByIdAndUpdate(
 			{ _id: req.params.id }, 
 			req.body, 
 			{ new: true }
@@ -53,8 +53,8 @@ router.put('/tasks/:id', (req, res, next) => {
 //DELETE
 router.delete('/tasks/:id', (req, res, next) => {
 	Task.findByIdAndDelete(req.params.id)
-		.then((task) => res.json(task)
-		.catch(next))
+		.then((task) => res.json(task))
+		.catch(next)
 })
 
 module.exports = router

@@ -8,7 +8,7 @@ const startMongoServer = async () => {
 			.connect(mongoURI, {
 				useUnifiedTopology: true,
 				useNewUrlParser: true,
-				useFindAndModify: true,
+				useFindAndModify: false,
 			})
 			.then((instance) => {
 				console.log(`connected to ${instance.connections[0].name}`)

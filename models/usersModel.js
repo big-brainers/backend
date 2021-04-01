@@ -19,7 +19,7 @@ const Users = new mongoose.Schema({
         type: Date,
         default: Date.now()
     },
-    tasks: [Tasks]
+    tasks: []
 })
 
 const UsersModel = mongoose.model('user', Users)
