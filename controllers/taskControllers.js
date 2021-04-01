@@ -40,7 +40,7 @@ router.post('/Users/:userId/tasks/create', (req, res, next) => {
 })
 
 //PUT updates a Task
-router.put('/Users/:userId/tasks/:id', (req, res, next) => {
+router.patch('/tasks/:id', (req, res, next) => {
 	Task.findByIdAndUpdate(
 			{ _id: req.params.id }, 
 			req.body, 
