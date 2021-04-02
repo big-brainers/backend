@@ -1,6 +1,6 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
-const mongoURI = `mongodb+srv://admin:1234test@cluster0.nbzrd.mongodb.net/boat-backend?retryWrites=true&w=majority`
+const mongoURI = `mongodb+srv://admin:1234test@cluster0.nbzrd.mongodb.net/boat-backend`;
 
 const startMongoServer = async () => {
 	try {
@@ -11,12 +11,12 @@ const startMongoServer = async () => {
 				useFindAndModify: false,
 			})
 			.then((instance) => {
-				console.log(`connected to ${instance.connections[0].name}`)
-			})
+				console.log(`connected to ${instance.connections[0].name}`);
+			});
 	} catch (event) {
-		console.log(event)
-		throw event
+		console.log(event);
+		throw event;
 	}
-}
+};
 
-module.exports = startMongoServer
+module.exports = startMongoServer;
