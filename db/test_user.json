@@ -1,7 +1,13 @@
 [
     {
         "email": "bigbrainersfour@gmail.com",
-        "password": "123456!"
+        "password": "123456!",
+        "tasks": [
+            {
+                "title": "BOAT",
+                "details": "We the BOAT gang"
+            }
+        ]
     },
     {
         "email": "test1@gmail.com",

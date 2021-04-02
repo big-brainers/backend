@@ -1,4 +1,4 @@
-const mongoose = require('./connection')
+const mongoose = require('mongoose')
 
 const Tasks = require('../models/tasksModel')
 const Users = require('../models/usersModel')

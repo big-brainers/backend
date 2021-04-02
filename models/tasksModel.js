@@ -11,6 +11,6 @@ const Tasks = mongoose.Schema({
 	tags: [String]
 })
 
-const TaskModel = mongoose.model('tasks', Tasks, 'tasks');
+const TaskModel = mongoose.model('Tasks', Tasks);
 
 module.exports = TaskModel

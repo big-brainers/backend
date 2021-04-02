@@ -29,7 +29,7 @@ router.get('/tasks/:id', (req, res, next) => {
 router.post('/Users/:userId/tasks/create', (req, res, next) => {
 	Task.create(req.body)
 		.then((newTask) => {
-			User.findOneAndUpdate(
+			User.findByIdAndUpdate(
 				req.params.userId,
 				{ $push: {tasks: newTask} },
 				{ new: true }
