@@ -1,7 +1,6 @@
-const mongoose = require('../connection');
-const Schema = mongoose.Schema;
+const mongoose = require('mongoose');
 
-const LogSchema = new Schema({
+const LogSchema = new mongoose.Schema({
 	title: String,
 	content: String,
 	author: String,

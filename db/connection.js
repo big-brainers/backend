@@ -1,6 +1,8 @@
+require('dotenv').config();
 const mongoose = require('mongoose');
+const URI = process.env.URI;
 
-const mongoURI = `mongodb+srv://admin:1234test@cluster0.nbzrd.mongodb.net/boat-backend`;
+const mongoURI = `${URI}/boat-backend`;
 
 const startMongoServer = async () => {
 	try {
