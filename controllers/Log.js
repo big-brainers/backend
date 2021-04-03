@@ -2,7 +2,7 @@ const express = require('express');
 const Log = require('../db/models/Log');
 const router = express.Router();
 
-router.get('/', () => {
+router.get('/', (req, res) => {
 	Log.find({}).then((entry) => {
 		res.json(entry);
 	});
@@ -14,11 +14,11 @@ router.get('/:id', (req, res) => {
 	});
 });
 
-router.get('/logs/:title', (req, res) => {
-	Log.findOne({ title: req.params.title }).then((entry) => {
-		res.json(entry);
-	});
-});
+// router.get('/logs/:title', (req, res) => {
+// 	Log.findOne({ title: req.params.title }).then((entry) => {
+// 		res.json(entry);
+// 	});
+// });
 
 router.post('/', (req, res) => {
 	Log.create(req.body).then((entry) => {
